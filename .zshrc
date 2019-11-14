@@ -79,9 +79,18 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  osx
+  ruby
+  rvm
+  git
+  rails
+  zsh-autosuggestions
+)
 
-source $ZSH/oh-my-zsh.sh
+if [ -f $HOME/.my-env ]; then
+    source $HOME/.my-env
+fi
 
 # User configuration
 
@@ -109,3 +118,10 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source ~/.my-env
+
+. /usr/local/etc/profile.d/z.sh
+
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
