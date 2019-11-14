@@ -86,10 +86,11 @@ plugins=(
   git
   rails
   zsh-autosuggestions
+  zsh-z
 )
 
-if [ -f $HOME/.my-env ]; then
-    source $HOME/.my-env
+if test -f "$HOME/.my-env"; then
+  source $HOME/.my-env
 fi
 
 # User configuration
@@ -118,10 +119,6 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-source ~/.my-env
-
-. /usr/local/etc/profile.d/z.sh
 
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
