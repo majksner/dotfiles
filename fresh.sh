@@ -9,7 +9,7 @@ curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/in
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Update Homebrew recipes
@@ -19,8 +19,14 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+# Set default MySQL root password and auth type.
+mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+
+# Install PHP extensions with PECL
+pecl install memcached imagick
+
+# Install global Composer packages
+/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose
 
 
 # Create a Sites directory
@@ -28,6 +34,13 @@ git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 mkdir $HOME/Sites
 mkdir $HOME/Dev
 
+
+# Create sites subdirectories
+mkdir $HOME/Sites/blade-ui-kit
+mkdir $HOME/Sites/laravel
+
+# Clone Github repositories
+./clone.sh
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc

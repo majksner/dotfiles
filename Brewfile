@@ -2,7 +2,6 @@
 
 # Taps
 tap 'homebrew/cask'
-tap 'homebrew/cask-eid'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
@@ -10,61 +9,76 @@ tap 'homebrew/bundle'
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
-brew 'bat' # "cat" on steroids
 brew 'coreutils' # Those that come with macOS are outdated
+brew 'ffmpeg'
+brew 'gh'
 brew 'git'
 brew 'gnupg2'
 brew 'grep'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+brew 'stripe'
+brew 'svn'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'zlib' # Needed for Memcached
 
+# Spatie Medialibrary
+brew 'jpegoptim'
+brew 'optipng'
+brew 'pngquant'
+brew 'svgo'
+brew 'gifsicle'
+
 # Development
-brew 'postgresql'
+brew 'php'
+brew 'php@7.3'
+brew 'php@7.2'
+brew 'composer'
+brew 'imagemagick'
+brew 'libmemcached'
+brew 'memcached'
+brew 'mysql'
+brew 'nginx'
 brew 'node'
 brew 'redis'
 brew 'yarn'
 
 # Apps
+cask '1password'
+cask '1password-cli'
+cask 'aerial'
 cask 'alfred'
-cask 'bartender'
 cask 'caffeine'
+cask 'dbngin'
+cask 'discord'
 cask 'docker'
+cask 'figma'
 cask 'firefox'
 cask 'github'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'gpg-suite'
-cask 'java'
-cask 'rubymine'
+cask 'imageoptim'
+cask 'insomnia'
+cask 'notion'
+cask 'phpstorm'
+cask 'screenflow'
 cask 'skype'
 cask 'slack'
-cask 'vscode'
-cask 'tower'
-cask 'blender'
-cask 'iterm2'
-cask 'paraview'
-cask 'meshlab'
-cask 'macdown'
-cask 'openinterminal'
-cask 'spotify'
-cask 'viscosity'
-cask 'appcleaner'
+cask 'steam'
 cask 'sublime-text'
 cask 'tableplus'
 cask 'telegram-desktop'
+cask 'the-unarchiver'
+cask 'there'
+cask 'tinkerwell'
 cask 'transmission'
-cask 'webtorrent'
-cask 'vagrant'
-cask 'virtualbox' # Might need to allow access in Security settings
-cask 'virtualbox-extension-pack'
+cask 'transmit'
+cask 'visual-studio-code'
 cask 'vlc'
-cask '1password'
-cask 'tweetbot'
-cask 'postgres'
+cask 'whatsapp'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -78,7 +92,6 @@ cask 'font-lato'
 
 cask 'font-open-sans'
 cask 'font-roboto'
-cask 'font-roboto-condensed'
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
@@ -90,7 +103,11 @@ cask 'font-ibm-plex'
 cask 'font-inter'
 
 # Mac App Store
-mas 'The Unarchiver', id: 425_424_353
-mas 'Magent', id: 441_258_766
-mas 'WireGuard', id: 1_451_685_025
-mas 'Harvest', id: 506_189_836
+mas 'Byword', id: 420212497
+mas 'Giphy Capture', id: 668208984
+mas 'Keynote', id: 409183694
+mas 'Numbers', id: 409203825
+mas 'Spark', id: 1176895641
+mas 'Speedtest', id: 1153157709
+mas 'Things', id: 904280696
+mas 'Tweetbot', id: 1384080005
